@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
       end
     config.vm.provision "shell", inline: <<-SHELL
       hostnamectl set-hostname collector
-      yum -y install wget net-tools ansible
+      yum -y install wget net-tools 
       cd /etc/yum.repos.d
       wget https://raw.githubusercontent.com/theo-bot/Labsession/master/infludata.repo
       wget https://raw.githubusercontent.com/theo-bot/Labsession/master/grafana.repo
@@ -21,11 +21,11 @@ Vagrant.configure("2") do |config|
       systemctl restart sshd
     SHELL
   end
-  config.vm.define "database" do |vm1|
+  config.vm.define "vm1" do |vm1|
     vm1.vm.network :private_network, ip: "192.168.70.20"
     config.vm.provision "shell", inline: <<-SHELL
-      hostnamectl set-hostname collector
-      yum -y install wget net-tools ansible
+      hostnamectl set-hostname vm1
+      yum -y install wget net-tools 
       cd /etc/yum.repos.d
       wget https://raw.githubusercontent.com/theo-bot/Labsession/master/infludata.repo
       wget https://raw.githubusercontent.com/theo-bot/Labsession/master/grafana.repo
