@@ -18,10 +18,11 @@ Vagrant.configure("2") do |config|
       sed 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config.orig > /etc/ssh/sshd_config
       useradd proxy -g users -G wheel
       echo "secret" | passwd --stdin proxy
+      systemctl restart sshd
     SHELL
   end
   config.vm.define "database" do |vm1|
-    vm1.vm.network :private_network, ip: "192.168.70.10"
+    vm1.vm.network :private_network, ip: "192.168.70.20"
     config.vm.provision "shell", inline: <<-SHELL
       hostnamectl set-hostname collector
       yum -y install wget net-tools ansible
@@ -33,6 +34,7 @@ Vagrant.configure("2") do |config|
       sed 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config.orig > /etc/ssh/sshd_config
       useradd proxy -g users -G wheel
       echo "secret" | passwd --stdin proxy
+      systemctl restart sshd
     SHELL
   end
 
