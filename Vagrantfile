@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.define "db1" do |db1|
-    collector.vm.network :private_network, ip: "192.168.70.10"
-      collector.vm.provider "virtualbox" do |vb|
+    db1.vm.network :private_network, ip: "192.168.70.10"
+      db1.vm.provider "virtualbox" do |vb|
         vb.gui = false
         vb.name = "db1"
         vb.memory = "1024"
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     SHELL
   end
   config.vm.define "db2" do |db2|
-    vm1.vm.network :private_network, ip: "192.168.70.20"
+    db2.vm.network :private_network, ip: "192.168.70.20"
     config.vm.provision "shell", inline: <<-SHELL
       hostnamectl set-hostname db2
       yum -y install wget net-tools 
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
     SHELL
   end
   config.vm.define "gui" do |gui|
-    vm1.vm.network :private_network, ip: "192.168.70.30"
+    gui.vm.network :private_network, ip: "192.168.70.30"
     config.vm.provision "shell", inline: <<-SHELL
       hostnamectl set-hostname gui
       yum -y install wget net-tools 
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
     SHELL
   end
   config.vm.define "relay" do |relay|
-    vm1.vm.network :private_network, ip: "192.168.70.40"
+    relay.vm.network :private_network, ip: "192.168.70.40"
     config.vm.provision "shell", inline: <<-SHELL
       hostnamectl set-hostname relay
       yum -y install wget net-tools 
