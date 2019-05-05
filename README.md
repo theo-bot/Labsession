@@ -10,4 +10,6 @@ Stappenplan
 # Setup database
 
 sudo yum install influxdb
-sudo su - influx
+cd /etc/influxdb
+
+Voeg onder aan de file het grahite blok toe
