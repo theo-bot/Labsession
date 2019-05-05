@@ -1,0 +1,6 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.70.10 db1
+192.168.70.20 db2
+192.168.70.30 gui
+192.168.70.40 relay
