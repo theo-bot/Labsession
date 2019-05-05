@@ -20,7 +20,7 @@ Voeg onder aan de file het grahite blok toe
   # Telegraf metrics
   enabled = true
   database = "telegraf"
-  bind-address = ":2003"
+  bind-address = ":**2003**"
   protocol = "tcp"
   consistency-level = "one"
   separator = "."
@@ -32,3 +32,10 @@ Voeg onder aan de file het grahite blok toe
   ]
   ```
   
+Start de database
+
+```
+systemctl start influxdb
+systemctl enable influxdb
+```
+
