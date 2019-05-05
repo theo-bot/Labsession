@@ -37,8 +37,8 @@ cd /etc/influxdb
 * Start de database
 
 ```
-systemctl start influxdb
-systemctl enable influxdb
+sudo systemctl start influxdb
+sudo systemctl enable influxdb
 ```
 * Controleer of de poort naar de graphite interface open staat.
 
@@ -60,6 +60,16 @@ Betrokken server: relay
 # systemctl start carbon
 # systemctl enable carbon
 ```
+
+## Setup telegraf
+
+Betrokken servers: alle
+```
+# yum install telegraf
+# vi /etc/telegraf/telegraf.conf
+```
+
+Configureer de graphite output zodat deze wijst naar de carbon relay
 
 
 
