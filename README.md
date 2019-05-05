@@ -9,10 +9,13 @@ Stappenplan
 
 # Setup database
 
+```
 sudo yum install influxdb
 cd /etc/influxdb
+```
 
 Voeg onder aan de file het grahite blok toe
+```
 [[graphite]]
   # Telegraf metrics
   enabled = true
@@ -27,5 +30,5 @@ Voeg onder aan de file het grahite blok toe
       "telegraf.procstat.* .measurement.host.process.exe.user.field",
       "telegraf.* .measurement.host.tags.field"
   ]
-  
+  ```
   
