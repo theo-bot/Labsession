@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
       useradd proxy -g users -G wheel
       echo "secret" | passwd --stdin proxy
       systemctl restart sshd
+      wget https://raw.githubusercontent.com/theo-bot/Labsession/master/hosts -O /etc/hosts 
     SHELL
   end
   config.vm.define "db2" do |db2|
@@ -33,6 +34,7 @@ Vagrant.configure("2") do |config|
       useradd proxy -g users -G wheel
       echo "secret" | passwd --stdin proxy
       systemctl restart sshd
+      wget https://raw.githubusercontent.com/theo-bot/Labsession/master/hosts -O /etc/hosts
     SHELL
   end
   config.vm.define "gui" do |gui|
@@ -48,6 +50,7 @@ Vagrant.configure("2") do |config|
       useradd proxy -g users -G wheel
       echo "secret" | passwd --stdin proxy
       systemctl restart sshd
+      wget https://raw.githubusercontent.com/theo-bot/Labsession/master/hosts -O /etc/hosts
     SHELL
   end
   config.vm.define "relay" do |relay|
@@ -61,6 +64,7 @@ Vagrant.configure("2") do |config|
       useradd proxy -g users -G wheel
       echo "secret" | passwd --stdin proxy
       systemctl restart sshd
+      wget https://raw.githubusercontent.com/theo-bot/Labsession/master/hosts -O /etc/hosts
     SHELL
   end
 end
