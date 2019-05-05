@@ -49,13 +49,17 @@ Betrokken server: relay
 ```
 # cd /opt
 # mkdir relay && cd $_
+# mkdir etc bin
+# cd bin
 # wget https://github.com/theo-bot/Labsession/raw/master/carbon-relay-ng
-# wget ...
+# cd ../etc
+# wget https://raw.githubusercontent.com/theo-bot/Labsession/master/carbon-relay.ini
 # useradd -s /bin/false carbon
 # cd /etc/systemd/system
 # wget ...
 # systemctl start carbon
 # systemctl enable carbon
+```
 
 
 
