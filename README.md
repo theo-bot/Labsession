@@ -7,7 +7,7 @@ Stappenplan
 4. Setup Grafana
 
 
-# Setup database
+## Setup database
 
 ```
 sudo yum install influxdb
