@@ -1,0 +1,19 @@
+[Unit]
+Description=Starts and Stops Carbon-Relat-NG service
+Documentation=https://github.com/graphite-ng/carbon-relay-ng
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+StandardOutput=syslog
+StandardError=syslog
+SyslogFacility=local0
+User=carbon
+Group=carbon
+WorkingDirectory=/opt/carbon/var/run
+ExecStart=/bin/sh -c '/opt/carbon/sbin/carbon-relay-ng /opt/carbon/etc/carbon-relay-ng.ini >> /opt/carbon/log/carbon-relay-ng.log 2>&1'
+LimitNOFILE=102400
+TimeoutStopSec=60
+
+[Install]
+WantedBy=multi-user.target
