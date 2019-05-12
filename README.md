@@ -49,14 +49,24 @@ Betrokken server: relay
 ```
 # cd /opt
 # mkdir relay && cd $_
-# mkdir etc bin
-# cd bin
+# mkdir -p etc sbin var/run log
+# cd sbin
 # wget https://github.com/theo-bot/Labsession/raw/master/carbon-relay-ng
 # cd ../etc
 # wget https://raw.githubusercontent.com/theo-bot/Labsession/master/carbon-relay.ini
 # useradd -s /bin/false carbon
+# cd ../../
+# chown -R carbon:carbon carbon
+# chmod 750 /opt/carbon/sbin/carbon-relay-ng
 # cd /etc/systemd/system
-# wget ...
+# wget https://raw.githubusercontent.com/theo-bot/Labsession/master/carbon.service
+# cd /etc/xinetd.d
+
+Enable de discard service tcp/9
+# vi discard-stream
+# systemctl start xinetd
+
+# Start carbon relay
 # systemctl start carbon
 # systemctl enable carbon
 ```
@@ -70,6 +80,19 @@ Betrokken servers: alle
 ```
 
 Configureer de graphite output zodat deze wijst naar de carbon relay
+Configureer het blok:
+- [[outputs.graphite]]
 
+## Setup Grafana
+Betrokken server: gui
 
+```
+# yum install grafana
+```
+Open de url: http:192.168.1.30:3000
+
+Login met admin/admin
+
+Voeg een influxdb datasource toe met url : http://db1:8086
+Maak een dasboard aan voor cpu usage system/user en iowait
 
