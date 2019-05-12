@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
     relay.vm.network :private_network, ip: "192.168.70.40"
     config.vm.provision "shell", inline: <<-SHELL
       hostnamectl set-hostname relay
-      yum -y install wget net-tools 
+      yum -y install wget net-tools xinetd
       echo '+@users:ALL' >> /etc/security/access.conf
       cp /etc/ssh/sshd_config /etc/ssh/sshd_config.orig
       sed 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config.orig > /etc/ssh/sshd_config
