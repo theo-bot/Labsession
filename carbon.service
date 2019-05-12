@@ -11,7 +11,7 @@ SyslogFacility=local0
 User=carbon
 Group=carbon
 WorkingDirectory=/opt/carbon/var/run
-ExecStart=/bin/sh -c '/opt/carbon/sbin/carbon-relay-ng /opt/carbon/etc/carbon-relay.ini >> /opt/carbon/log/carbon-relay-ng.log 2>&1'
+ExecStart=/bin/sh -c "/opt/carbon/sbin/carbon-relay-ng /opt/carbon/etc/carbon-relay.ini >> /opt/carbon/log/carbon-relay-ng.log 2>&1"
 LimitNOFILE=102400
 TimeoutStopSec=60
 
