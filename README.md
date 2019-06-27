@@ -101,8 +101,12 @@ Betrokken servers: alle
 ```
 
 Configureer de graphite output zodat deze wijst naar de carbon relay
+Zet het outputs.influxdb block uit
 Configureer het blok:
 - [[outputs.graphite]]
+- Zet de servers op: ["relay:2103"]
+- Zet de template op: "measurement.host.tags.field"
+- Zet de prefix op: "telegraf."
 
 ## Setup Grafana
 Betrokken server: gui
