@@ -114,7 +114,7 @@ Betrokken server: gui
 ```
 # yum install grafana
 ```
-Open de url: http:192.168.1.30:3000
+Open de url: http:192.168.70.30:3000
 
 Login met admin/admin
 
