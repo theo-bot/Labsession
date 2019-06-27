@@ -16,7 +16,7 @@ sudo yum install influxdb
 cd /etc/influxdb
 ```
 
-* Voeg onder aan de file het grahite blok toe
+* Voeg onder aan de file het graphite blok toe
 ```
 [[graphite]]
   # Telegraf metrics
