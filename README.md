@@ -40,6 +40,27 @@ cd /etc/influxdb
 sudo systemctl start influxdb
 sudo systemctl enable influxdb
 ```
+
+* Maak de database
+
+```
+$ influx
+InfluxDB shell version: 1.7.6
+Enter an InfluxQL query
+> show databases
+name: databases
+name
+----
+> create database telegraf
+> show databases
+name: databases
+name
+----
+_internal
+telegraf
+>
+```
+
 * Controleer of de poort naar de graphite interface open staat.
 
 
